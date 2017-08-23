@@ -43,7 +43,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab fx:id="tab01" text="Members">
+    <Tab fx:id="tab01" onSelectionChanged="#chargeCollab" text="Members">
       <content>
         <AnchorPane fx:id="tab1" minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="501.0">
                <children>
@@ -63,7 +63,6 @@
                   </ImageView>
                   <ListView fx:id="listCollab" layoutX="14.0" layoutY="90.0" prefHeight="223.0" prefWidth="260.0" />
                   <Button fx:id="quitAppli" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#quitAppli" text="Quit" textFill="#1d525b" />
-                  <Button fx:id="addCollabs" layoutX="99.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#chargeCollab" prefHeight="27.0" prefWidth="45.0" text="+" textFill="#1d525b" />
                   <Button fx:id="addCollab1" layoutX="278.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#removeCollab" prefHeight="27.0" prefWidth="45.0" text="&lt;" textFill="#1d525b" />
                </children></AnchorPane>
       </content>
