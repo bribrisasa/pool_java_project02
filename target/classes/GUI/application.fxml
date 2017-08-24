@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ControlerTab">
+  <tabs>
+    <Tab fx:id="tab02" text="Informations">
+      <content>
+        <AnchorPane fx:id="tab2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#1d525b" layoutX="15.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Report 1/4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1d525b" layoutX="14.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                  <DatePicker fx:id="dateMeeting" layoutX="15.0" layoutY="134.0" />
+                  <Text fill="#1d525b" layoutX="14.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Principal Subject - Title" />
+                  <Separator layoutY="45.0" prefHeight="15.0" prefWidth="600.0" />
+                  <TextField fx:id="titleReport" layoutX="14.0" layoutY="76.0" prefHeight="30.0" prefWidth="360.0" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../IMAGES/icons8-leaf.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="quitAppli" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#quitAppli" text="Quit" textFill="#1d525b" />
+                  <Text fill="#1d525b" layoutX="14.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" />
+                  <TextField fx:id="durationReport" layoutX="14.0" layoutY="192.0" prefHeight="30.0" prefWidth="360.0" />
+                  <TextField fx:id="locationReport" layoutX="15.0" layoutY="258.0" prefHeight="30.0" prefWidth="360.0" />
+                  <Text fill="#1d525b" layoutX="16.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tab01" onSelectionChanged="#chargeCollab" text="Members">
+      <content>
+        <AnchorPane fx:id="tab11" minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="501.0">
+               <children>
+                  <Text fill="#1d525b" layoutX="15.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Report 2/3" wrappingWidth="258.21875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1d525b" layoutX="15.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participants" />
+                  <Button fx:id="addCollab" layoutX="278.0" layoutY="157.0" mnemonicParsing="false" onMouseClicked="#addCollab" prefHeight="27.0" prefWidth="45.0" text="&gt;" textFill="#1d525b" />
+                  <ListView fx:id="listAddedCollab" layoutX="329.0" layoutY="90.0" prefHeight="223.0" prefWidth="260.0" />
+                  <Separator layoutY="45.0" prefHeight="15.0" prefWidth="600.0" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../IMAGES/icons8-leaf.png" />
+                     </image>
+                  </ImageView>
+                  <ListView fx:id="listCollab" layoutX="14.0" layoutY="90.0" prefHeight="223.0" prefWidth="260.0" />
+                  <Button fx:id="quitAppli" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#quitAppli" text="Quit" textFill="#1d525b" />
+                  <Button fx:id="addCollab1" layoutX="278.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#removeCollab" prefHeight="27.0" prefWidth="45.0" text="&lt;" textFill="#1d525b" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Actions">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#1d525b" layoutX="15.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Report 2/3" wrappingWidth="258.21875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutY="45.0" prefHeight="15.0" prefWidth="600.0" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../IMAGES/icons8-leaf.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="quitAppli1" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#quitAppli" text="Quit" textFill="#1d525b" />
+                  <Text fill="#1d525b" layoutX="15.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Action" />
+                  <TextField fx:id="action" layoutX="93.0" layoutY="78.0" prefHeight="30.0" prefWidth="360.0" />
+                  <Button fx:id="addAction" layoutX="470.0" layoutY="79.0" mnemonicParsing="false" onMouseClicked="#addAction" text="+" textFill="#1d525b" />
+                  <ListView fx:id="listAction" layoutX="93.0" layoutY="125.0" prefHeight="200.0" prefWidth="360.0" />
+                  <Button fx:id="removeAction" layoutX="470.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#removeAction" text="-" textFill="#1d525b" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tab03" text="Report">
+        <content>
+          <AnchorPane fx:id="tab3" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#1d525b" layoutX="15.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Report 4/4" wrappingWidth="215.400390625">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1d525b" layoutX="15.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary" />
+                  <TextArea fx:id="summaryReport" layoutX="15.0" layoutY="90.0" prefHeight="222.0" prefWidth="572.0" />
+                  <Button fx:id="generate" layoutX="480.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#generatePDF" text="Generate PDF" textFill="#1d525b" />
+                  <Separator layoutY="45.0" prefHeight="15.0" prefWidth="600.0" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../IMAGES/icons8-leaf.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="quitAppli" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#quitAppli" text="Quit" textFill="#1d525b" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
