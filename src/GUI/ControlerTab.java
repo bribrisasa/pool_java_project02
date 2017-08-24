@@ -1,6 +1,9 @@
 package GUI;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.itextpdf.text.DocumentException;
 
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -85,18 +88,26 @@ public void removeAction() {
 
 @FXML
 public void generatePDF() {
-	FilePdf file = new FilePdf(
-			titleReport.getText(),
-			locationReport.getText(),
-			dateMeeting.getValue().toString(),
-			durationReport.getText(),
-			listAdded.getCollab(),
-			actions,
-			summaryReport.getText()
-			
-			);
-	
-	file.affichePdf();
+	FilePdf file;
+	try {
+		file = new FilePdf(
+				titleReport.getText(),
+				locationReport.getText(),
+				dateMeeting.getValue().toString(),
+				durationReport.getText(),
+				listAdded.getCollab(),
+				actions,
+				summaryReport.getText()
+				
+				);
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (DocumentException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
 }
 
 @FXML
