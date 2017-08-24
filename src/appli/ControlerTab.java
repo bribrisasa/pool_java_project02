@@ -27,7 +27,7 @@ import javafx.scene.control.TextField;
 
 
 public class ControlerTab {
-	ListCollab list = new ListCollab(System.getProperty("user.dir")+"src/appli/pers.csv");
+	ListCollab list = new ListCollab(System.getProperty("user.dir")+"/src/appli/pers.csv");
 
 	
 	ListCollab listAdded = new ListCollab();
