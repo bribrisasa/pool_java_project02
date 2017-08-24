@@ -97,8 +97,7 @@ public void generatePDF() {
 				durationReport.getText(),
 				listAdded.getCollab(),
 				actions,
-				summaryReport.getText()
-				
+				summaryReport.getText()	
 				);
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block

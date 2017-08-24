@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -31,6 +32,8 @@ public class FilePdf {
 	public static final String DEST="C:/Users/Laurent/Documents/GitHub/pool_java_project02/srcMeeting.pdf";
 	ArrayList<String> attendance;
 	ArrayList<String> actions;
+	BaseColor darkblue = new BaseColor(77, 182, 172);
+	BaseColor lightblue = new BaseColor(0, 150, 136);
 
 	String summary;
 
@@ -78,8 +81,6 @@ public class FilePdf {
 
 	//methode de creation de resumé de réunion
 	public Paragraph addReport(String para) {
-		Font fontbold = FontFactory.getFont("Greek-Regular", 40, Font.BOLD);
-		Font font = new Font();
 		Chunk underline = new Chunk("Meeting report: \n");
 		underline.setUnderline(0.1f, -2f); //0.1 thick, -2 y-location
 		Paragraph p = new Paragraph();
@@ -89,9 +90,9 @@ public class FilePdf {
 		return p;
 	}
 	//methode de creation de lignes de séparations
-	public Chunk addBreacklines() {
-		Chunk linebreak = new Chunk(new DottedLineSeparator());
-		return linebreak;
+	public DottedLineSeparator addBreacklines() {
+		DottedLineSeparator line = new DottedLineSeparator();
+		return line;
 	}
 
 	public void affichePdf() {
@@ -155,7 +156,6 @@ public class FilePdf {
 	public Paragraph addListMembers(ArrayList<String> attendance2) {
 		Font zapfdingbats = new Font(FontFamily.ZAPFDINGBATS, 8);
 		Font font = new Font();
-		Chunk linebreak = new Chunk(new DottedLineSeparator());
 		Chunk bullet = new Chunk(String.valueOf((char) 108), zapfdingbats);
 		Chunk underline = new Chunk("Attendance: \n");
 		underline.setUnderline(0.1f, -2f); //0.1 thick, -2 y-location
@@ -171,11 +171,10 @@ public class FilePdf {
 	}
 	//methode de creation de creation d'entête
 	public Paragraph addStart(String loc, String date,String time) {
-		Font fontbold = FontFactory.getFont("Greek-Regular", 40, Font.BOLD);
-		Font font = new Font();	
-		Chunk linebreak = new Chunk(new LineSeparator());
+		LineSeparator line = new LineSeparator();
+		line.setLineColor(darkblue);
 		Paragraph p = new Paragraph();
-		p.add(linebreak);  
+		p.add(line);  
 		p.add("\n");
 		p.add("Location :               ");
 		p.add(loc+" \n");
@@ -185,7 +184,7 @@ public class FilePdf {
 		p.add("\n");
 		p.add("Time :                     ");
 		p.add(time+" \n");
-		p.add(linebreak);  
+		p.add(line);  
 		p.add("\n");
 		p.add("\n");
 		return p;
@@ -194,10 +193,7 @@ public class FilePdf {
 	//methode de creation de listes des sujets
 	public Paragraph addListSujets(ArrayList<String> actions2) {
 		int cont=1;
-		Font zapfdingbats = new Font(FontFamily.ZAPFDINGBATS, 8);
 		Font font = new Font();
-		Chunk linebreak = new Chunk(new DottedLineSeparator());
-		Chunk bullet = new Chunk(String.valueOf((char) 108), zapfdingbats);
 		Chunk underline = new Chunk("Action List : \n");
 		underline.setUnderline(0.1f, -2f); //0.1 thick, -2 y-location
 		Paragraph p = new Paragraph();
