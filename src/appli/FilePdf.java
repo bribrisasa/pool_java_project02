@@ -1,11 +1,28 @@
-package GUI;
+package appli;
 
+
+import java.awt.BorderLayout;
 import java.awt.Desktop;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import org.apache.log4j.chainsaw.Main;
 
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
@@ -21,24 +38,26 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.DottedLineSeparator;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class FilePdf {
-	String titre;
-	String location;
-	String date;
-	String duration;
-	public static final String DEST="C:/Users/Laurent/Documents/GitHub/pool_java_project02/srcMeeting.pdf";
+	String titre = "";
+	String location = "";
+	String date = "";
+	String duration = "";
+	public static final String DEST=System.getProperty("user.dir")+"srcMeeting.pdf";
 	ArrayList<String> attendance;
 	ArrayList<String> actions;
 	BaseColor darkblue = new BaseColor(77, 182, 172);
 	BaseColor lightblue = new BaseColor(0, 150, 136);
 
-	String summary;
+	String summary = "";
 
 	public FilePdf(String titre, String location, String date, String duration, ArrayList<String> attendance,
 			ArrayList<String> actions, String summary) throws FileNotFoundException, DocumentException {
+		
 		this.titre = titre;
 		this.location = location;
 		this.date = date;
@@ -46,6 +65,7 @@ public class FilePdf {
 		this.attendance = attendance;
 		this.actions = actions;
 		this.summary = summary;
+		
 		//creation de document
 		Document document = new Document(PageSize.A4, 36, 36, 90, 36);
 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(DEST));
@@ -71,14 +91,14 @@ public class FilePdf {
 		alert.showAndWait();
 		if (Desktop.isDesktopSupported()) {
 		    try {
-		        File myFile = new File("C:/Users/Laurent/Documents/GitHub/pool_java_project02/srcMeeting.pdf");
+		        File myFile = new File(DEST);
 		        Desktop.getDesktop().open(myFile);
 		    } catch (IOException ex) {
 		        // no application registered for PDFs
 		    }
 		}
+		    
 	}
-
 	//methode de creation de resumé de réunion
 	public Paragraph addReport(String para) {
 		Chunk underline = new Chunk("Meeting report: \n");

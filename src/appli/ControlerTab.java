@@ -1,7 +1,16 @@
-package GUI;
+package appli;
+
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JFileChooser;
 
 import com.itextpdf.text.DocumentException;
 
@@ -16,8 +25,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 
+
 public class ControlerTab {
-	ListCollab list = new ListCollab("src/GUI/pers.csv");
+	ListCollab list = new ListCollab(System.getProperty("user.dir")+"src/appli/pers.csv");
+
+	
 	ListCollab listAdded = new ListCollab();
 ArrayList<String> actions = new ArrayList<String>();
 
@@ -55,6 +67,7 @@ public void addCollab() {
 	listCollab.itemsProperty().bind(listColl);
 
 }
+
 @FXML
 public void removeCollab() {
 	list.add(listAddedCollab.getSelectionModel().getSelectedItem());
@@ -85,10 +98,13 @@ public void removeAction() {
 	
 }
 
-
 @FXML
 public void generatePDF() {
 	FilePdf file;
+	
+	if(dateMeeting.getValue() == null) {
+		dateMeeting.setValue(LocalDate.now());
+	}
 	try {
 		file = new FilePdf(
 				titleReport.getText(),

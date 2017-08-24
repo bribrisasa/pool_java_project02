@@ -1,7 +1,10 @@
-package GUI;
+package appli;
 
 
+
+import java.awt.TextField;
 import java.io.*;
+import java.time.LocalDate;
 
 import javax.print.DocFlavor.URL;
 
@@ -17,18 +20,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.*;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
-import javafx.*;
 
 public class Run extends Application {
 	private double xOffset = 0;
 	private double yOffset = 0;
 	@FXML
 	static ListView<String> listCollab;
+	@FXML TextField durationReport;
 	protected static ListProperty<String> listColl = new SimpleListProperty<String>();
-
 	
 	  @Override
 	  public void start(final Stage primaryStage) throws IOException {
@@ -47,13 +50,12 @@ public class Run extends Application {
 					primaryStage.setY(event.getScreenY() - yOffset);
 				}
 			});
-
+			
 			Scene scene = new Scene(root);
 			scene.setFill(Color.TRANSPARENT);
 			primaryStage.setScene(scene);
 			primaryStage.sizeToScene(); 
 			primaryStage.show();
-	
 			
 	  }
 

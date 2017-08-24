@@ -1,4 +1,5 @@
-package GUI;
+package appli;
+
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;

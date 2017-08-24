@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ControlerTab">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.ControlerTab">
   <tabs>
     <Tab fx:id="tab02" text="Informations">
       <content>
@@ -29,7 +29,7 @@
                   <DatePicker fx:id="dateMeeting" layoutX="15.0" layoutY="134.0" />
                   <Text fill="#1d525b" layoutX="14.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Principal Subject - Title" />
                   <Separator layoutY="45.0" prefHeight="15.0" prefWidth="600.0" />
-                  <TextField fx:id="titleReport" layoutX="14.0" layoutY="76.0" prefHeight="30.0" prefWidth="360.0" />
+                  <TextField fx:id="titleReport" layoutX="14.0" layoutY="76.0" prefHeight="30.0" prefWidth="360.0" Text=""/>
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../IMAGES/icons8-leaf.png" />
@@ -37,8 +37,8 @@
                   </ImageView>
                   <Button fx:id="quitAppli" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#quitAppli" text="Quit" textFill="#1d525b" />
                   <Text fill="#1d525b" layoutX="14.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" />
-                  <TextField fx:id="durationReport" layoutX="14.0" layoutY="192.0" prefHeight="30.0" prefWidth="360.0" />
-                  <TextField fx:id="locationReport" layoutX="15.0" layoutY="258.0" prefHeight="30.0" prefWidth="360.0" />
+                  <TextField fx:id="durationReport" layoutX="14.0" layoutY="192.0" prefHeight="30.0" prefWidth="360.0" Text=""/>
+                  <TextField fx:id="locationReport" layoutX="15.0" layoutY="258.0" prefHeight="30.0" prefWidth="360.0" Text=""/>
                   <Text fill="#1d525b" layoutX="16.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
                </children></AnchorPane>
       </content>
@@ -84,7 +84,7 @@
                   </ImageView>
                   <Button fx:id="quitAppli1" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#quitAppli" text="Quit" textFill="#1d525b" />
                   <Text fill="#1d525b" layoutX="15.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Action" />
-                  <TextField fx:id="action" layoutX="93.0" layoutY="78.0" prefHeight="30.0" prefWidth="360.0" />
+                  <TextField fx:id="action" layoutX="93.0" layoutY="78.0" prefHeight="30.0" prefWidth="360.0" Text=""/>
                   <Button fx:id="addAction" layoutX="470.0" layoutY="79.0" mnemonicParsing="false" onMouseClicked="#addAction" text="+" textFill="#1d525b" />
                   <ListView fx:id="listAction" layoutX="93.0" layoutY="125.0" prefHeight="200.0" prefWidth="360.0" />
                   <Button fx:id="removeAction" layoutX="470.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#removeAction" text="-" textFill="#1d525b" />
@@ -102,7 +102,7 @@
                      </font>
                   </Text>
                   <Text fill="#1d525b" layoutX="15.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary" />
-                  <TextArea fx:id="summaryReport" layoutX="15.0" layoutY="90.0" prefHeight="222.0" prefWidth="572.0" />
+                  <TextArea fx:id="summaryReport" layoutX="15.0" layoutY="90.0" prefHeight="222.0" prefWidth="572.0" Text=""/>
                   <Button fx:id="generate" layoutX="480.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#generatePDF" text="Generate PDF" textFill="#1d525b" />
                   <Separator layoutY="45.0" prefHeight="15.0" prefWidth="600.0" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
